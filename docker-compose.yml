@@ -6,7 +6,7 @@ services:
     container_name: web
     restart: always
     env_file:
-      - ./env.dev
+      - ./web/env.dev
     expose:
       - 8080
     networks:
@@ -25,11 +25,12 @@ services:
 
   db:
     image: postgres:latest
+    container_name: db
     restart: always
     ports:
       - 5432:5432
-    environment:
-      - ./env.dev
+    env_file:
+      - ./web/env.dev
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
