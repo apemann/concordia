@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <header class="jumbotron jumbotron-fluid">
+      <div class="container-fluid d-flex align-items-center flex-column">
+          <h1 class="masthead-heading text-uppercase text-center mb-0">Concordia</h1>
+          <hr>
+          <p class="masthead-subheading font-weight-light mb-0">3D Geometry From 2D Sources</p>
+          <hr>
+          <p class="lead font-weight-light mb-0">Rapid prototyping for designers</p>
+      </div>
+  </header>
+
+  <section id="services" class="bg-alt">
+    <div class="container-fluid text-center">
+      <h2>Generative Services</h2>
+      <div class="row justify-content-center">
+        {% for service in messages.services.items() %}
+          <div class="col-sm-6 mb-5 service-caption">
+            <div class="row mb-5 mx-4 justify-content-center">
+              <div class="col-4 my-auto">
+                <img src="/static/images/{{service[0]}}.svg" class="img-responsive py-4" style="width:100%" alt="Image">
+              </div>
+              <div class="col-8 service-caption">
+                <h4 class="text-left">{{ service[1].title }}</h4>
+                <p class="text-justify">{{ service[1].message }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="bg-alt">
+    <div class="container-fluid text-center pb-5">
+      <h2>About</h2>
+      <p class="center-paragraph mx-auto">{{ messages.about.about.message }}</p>
+    </div>
+  </section>
+
+  <footer class="page-footer font-small pt-4 bg-alt">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3 mx-auto">
+          <p>Created by SLB Consulting, France</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+      </div>
+    </div>
+  </footer>
+{% endblock content %}

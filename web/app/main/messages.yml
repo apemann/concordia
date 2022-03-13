@@ -1,0 +1,11 @@
+about:
+  about:
+    title: about
+    message: >-
+      Concordia is an Open Source project available under MIT licence
+
+services:
+  geometry:
+    title: Automated geometry generation
+    message: >-
+      Applying Generative Adversarial Networks (GAN) to create 3D geomerty from 2D images of objects
